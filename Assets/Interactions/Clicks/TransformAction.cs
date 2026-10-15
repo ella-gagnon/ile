@@ -1,10 +1,11 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Actions/Transform")]
-public class TransformAction: ClickAction
+[CreateAssetMenu(menuName = "Actions/Transformation/Color")]
+public class TransformAction : ClickAction
 {
-    public Transformable obj;
-
     public override void Execute(GameObject target, GameObject actor)
-    => obj.startTransformation();
+    {
+        if (target.TryGetComponent<ColorTransformable>(out var t))
+            t.StartTransformation();
+    }
 }
