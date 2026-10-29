@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[RequireComonent(typeof(SpriteRenderer))]
-public class SpriteTransformable : MonoBehaviour
+[RequireComponent(typeof(SpriteRenderer))]
+public class SpriteTransformable : MonoBehaviour, Transformable
 {
     public Sprite initialSprite;
     public Sprite finalSprite;
@@ -17,6 +17,7 @@ public class SpriteTransformable : MonoBehaviour
 
     public void StartTransformation()
     {
+        Debug.Log("Transforming...");
         sr.sprite = finalSprite;
     }
 }

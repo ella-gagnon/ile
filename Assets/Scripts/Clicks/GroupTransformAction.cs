@@ -7,5 +7,7 @@ public class GroupTransformAction : ClickAction
     {
         if (target.TryGetComponent<TransformGroup>(out var g))
             g.Trigger();
+        else
+            Debug.LogWarning($"{target.name} has no TransformGroup.", target);
     }
 }

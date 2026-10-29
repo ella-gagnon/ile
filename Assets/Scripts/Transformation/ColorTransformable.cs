@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class ColorTransformable : MonoBehaviour
+public class ColorTransformable : MonoBehaviour, Transformable
 {
     public Color deadColor = Color.gray;
     public Color liveColor = Color.white;

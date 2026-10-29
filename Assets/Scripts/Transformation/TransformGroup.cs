@@ -7,8 +7,8 @@ public class TransformGroup : MonoBehaviour
     public void Trigger()
     {
         if (root == null) { Debug.LogWarning($"{name}: no root assigned.", this); return; }
-
-        foreach (var t in root.GetComponentsInChildren<ColorTransformable>(true))
+        Debug.Log("Looking for something to transform...");
+        foreach (var t in root.GetComponentsInChildren<Transformable>(true))
             t.StartTransformation();
     }
 }
